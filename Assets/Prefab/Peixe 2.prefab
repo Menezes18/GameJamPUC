@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2839824299606367311}
   - component: {fileID: 3784356171515477370}
   m_Layer: 0
-  m_Name: Peixe
+  m_Name: Peixe 2
   m_TagString: Peixe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31ac1be4ae05b0b4bbe535684a8180fc, type: 2}
+  - {fileID: 2100000, guid: ea15c204f8a687f48bc1ac456fe22b82, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   destroyDistance: 1
   puxar: 0
   smoothFactor: 10000
-  _skinPeixe: 0
+  _skinPeixe: 2
   amplitude: 0.5
   frequencia: 1
   rb: {fileID: 0}

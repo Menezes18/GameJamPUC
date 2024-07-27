@@ -8,6 +8,7 @@ public enum SkinPeixe{
     peixeSkin2,
     peixeSkin3
 }
+
 public class FishMovement : MonoBehaviour {
     public Transform playerTransform;
     public float speed = 5f;
@@ -20,6 +21,9 @@ public class FishMovement : MonoBehaviour {
     private Vector3 posicaoInicial;
     public Rigidbody rb;
     public bool movimenta = false;
+    
+    
+    
     private void Start(){
         
         var player = GameObject.FindWithTag("TranformArma");

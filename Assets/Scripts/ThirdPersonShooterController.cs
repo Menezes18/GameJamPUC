@@ -19,7 +19,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
     private Animator animator;
     public int distancia;
     public GameObject[] SkinPeixe;
-    public int Peixes;
+    public int[] Peixes;
     public Transform ArmaPeixe;
     public Transform JogarPeixe;
     public float throwForce = 10f;
@@ -67,6 +67,8 @@ public class ThirdPersonShooterController : MonoBehaviour {
                         Fish.puxar = true;
                     }
                 }
+            
+                
             }
 
             Vector3 worldAimTarget = mouseWorldPosition;
@@ -78,40 +80,82 @@ public class ThirdPersonShooterController : MonoBehaviour {
             if (aimDirection != Vector3.zero) {
                 transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
             }
-        } else {
+        }
+        else{
             aimVirtualCamera.gameObject.SetActive(false);
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true);
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 13f));
-        }
 
-        // Detectar e destruir peixes ao contato
+            FishMovement[] allFish = FindObjectsOfType<FishMovement>();
+            foreach (var fish in allFish){
+                fish.puxar = false;
+            }
+
+        }
     }
 
     private void DetectAndDestroyFish() {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1f);
         foreach (Collider collider in hitColliders) {
-            if (collider.CompareTag("Peixe")) {
+            if (collider.CompareTag("Peixe")){
+                var peixeScript = collider.GetComponent<FishMovement>();
+                //peixeScript._skinPeixe
+                switch (peixeScript._skinPeixe){
+                    case  global::SkinPeixe.peixeSkin1:
+                        Peixes[0]++;
+                        break;
+                    case  global::SkinPeixe.peixeSkin2:
+                        Peixes[1]++;
+                        break;
+                    case  global::SkinPeixe.peixeSkin3:
+                        Peixes[2]++;
+                        break;
+                }
+                
                 Destroy(collider.gameObject);
-                Peixes++;
+                
             }
         }
     }
     void ThrowObject(){
-        if (Peixes > 0){
-            Debug.Log("AA");
-            GameObject thrownObject = Instantiate(SkinPeixe[0], JogarPeixe.position, JogarPeixe.rotation);
+        
+            if(Peixes[0] > 0){
+                GameObject thrownObject = Instantiate(SkinPeixe[0], JogarPeixe.position, JogarPeixe.rotation);
 
-             var peixe = thrownObject.GetComponent<FishMovement>();
-            
-            Rigidbody rb = thrownObject.GetComponent<Rigidbody>();
-            if (rb != null){
-                Peixes--;
-                rb.AddForce(ArmaPeixe.forward * throwForce, ForceMode.Impulse);
+                 var peixe = thrownObject.GetComponent<FishMovement>();
                 
+                Rigidbody rb = thrownObject.GetComponent<Rigidbody>();
+                if (rb != null){
+                    Peixes[0]--;
+                    rb.AddForce(ArmaPeixe.forward * throwForce, ForceMode.Impulse);
+                    
+                }
+            }else if (Peixes[1] > 0){
+                GameObject thrownObject = Instantiate(SkinPeixe[1], JogarPeixe.position, JogarPeixe.rotation);
+
+                var peixe = thrownObject.GetComponent<FishMovement>();
+
+                Rigidbody rb = thrownObject.GetComponent<Rigidbody>();
+                if (rb != null){
+                    Peixes[1]--;
+                    rb.AddForce(ArmaPeixe.forward * throwForce, ForceMode.Impulse);
+
+                }
+            }else if (Peixes[2] > 0)
+            {
+                GameObject thrownObject = Instantiate(SkinPeixe[2], JogarPeixe.position, JogarPeixe.rotation);
+
+                var peixe = thrownObject.GetComponent<FishMovement>();
+
+                Rigidbody rb = thrownObject.GetComponent<Rigidbody>();
+                if (rb != null){
+                    Peixes[2]--;
+                    rb.AddForce(ArmaPeixe.forward * throwForce, ForceMode.Impulse);
+
+                }
+
             }
-            
-        }
     }
     private void OnDrawGizmosSelected() {
         Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);

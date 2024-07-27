@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class OxigenioPlayer : MonoBehaviour{
     public static OxigenioPlayer instancia;
@@ -10,15 +11,18 @@ public class OxigenioPlayer : MonoBehaviour{
     public float maxOxigenio;
     public float rate = 1.0f;
     public float rateReg = 1.0f;
-    
     public bool OxigenioReg = true;
 
+    public Slider sliderOxigenio;
     private void Awake(){
         instancia = this;
     }
 
+    public void UpdateUI(){
+        sliderOxigenio.value = oxigenio / 100;
+    }
     private void Update(){
-        
+        UpdateUI();
         if (oxigenio < 0)
         {
             Debug.Log("moreu");
