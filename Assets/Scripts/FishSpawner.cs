@@ -8,7 +8,7 @@ public class FishSpawner : MonoBehaviour {
 
     public GameObject SpawnFish(GameObject targetLinePosition) {
         int randomFishIndex = Random.Range(0, fishPrefabs.Length);
-        GameObject newFish = Instantiate(fishPrefabs[randomFishIndex], transform.position, Quaternion.identity);
+        GameObject newFish = Instantiate(fishPrefabs[randomFishIndex], transform.position, Quaternion.identity, transform.parent);
 
         newFish.GetComponent<FishCharacter>().SetTarget(targetLinePosition);
 

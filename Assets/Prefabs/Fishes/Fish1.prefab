@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3242979198926788531}
   - component: {fileID: 7542177853014766651}
+  - component: {fileID: 5169046865786587393}
   m_Layer: 0
   m_Name: Fish1
   m_TagString: Untagged
@@ -48,6 +49,22 @@ MonoBehaviour:
   movTargetPosition: {fileID: 0}
   stopDistance: 1.8
   speed: 6
+--- !u!114 &5169046865786587393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3578927008140159032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61dec74fc8114813892ee8fe9d213fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: []
+  name: 
+  questFactory: {fileID: 3610040226209331818, guid: 70d24186e403b49588d176c9175ad2c4,
+    type: 3}
 --- !u!1 &6410404038182635660
 GameObject:
   m_ObjectHideFlags: 0

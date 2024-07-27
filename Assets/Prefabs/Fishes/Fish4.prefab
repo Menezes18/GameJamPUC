@@ -117,6 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 501156535847391707}
   - component: {fileID: 2885340675369101884}
+  - component: {fileID: 3308466436378697658}
   m_Layer: 0
   m_Name: Fish4
   m_TagString: Untagged
@@ -155,3 +156,19 @@ MonoBehaviour:
   movTargetPosition: {fileID: 0}
   stopDistance: 1.8
   speed: 6
+--- !u!114 &3308466436378697658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4312269226858074311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61dec74fc8114813892ee8fe9d213fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: []
+  name: 
+  questFactory: {fileID: 3610040226209331818, guid: 70d24186e403b49588d176c9175ad2c4,
+    type: 3}

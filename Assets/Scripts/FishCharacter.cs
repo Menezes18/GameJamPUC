@@ -15,7 +15,12 @@ public class FishCharacter : MonoBehaviour {
             var step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, movTargetPosition.transform.position, step);
         } else {
-            isMoving = false;
+            if (isMoving) {
+                isMoving = false;
+                if (movTargetPosition.gameObject == transform.parent.gameObject) {
+                    GetComponent<QuestGiver>().Interact();
+                }
+            }
         }
     }
 

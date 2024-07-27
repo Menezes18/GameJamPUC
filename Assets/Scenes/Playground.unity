@@ -694,6 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 523870226}
   exitPos: {fileID: 1071754459}
+  MAX_LINE_SIZE: 5
   fishes: []
 --- !u!1001 &746329221
 PrefabInstance:

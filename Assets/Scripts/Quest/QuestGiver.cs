@@ -7,6 +7,13 @@ public class QuestGiver : NPC {
     public bool Helped {get; set;}
     public Quest QuestToGive {get; set;}
 
+    [SerializeField] private GameObject questFactory;
+    private GameObject factoryInstace;
+
+    private void Start() {
+        factoryInstace = Instantiate(questFactory);
+    }
+
 
     public override void Interact() {
         base.Interact();
@@ -22,6 +29,7 @@ public class QuestGiver : NPC {
 
     void AssignQuest() {
         AssignedQuest = true;
+        QuestToGive = factoryInstace.GetComponent<QuestFactory>().GetNewQuest(transform);
     }
 
     void CheckQuest() {

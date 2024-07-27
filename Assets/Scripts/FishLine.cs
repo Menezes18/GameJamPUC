@@ -10,17 +10,19 @@ public class FishLine : MonoBehaviour {
 
     void Start() {
         InvokeRepeating("NewFishRequest", 1f, 3f);
-        InvokeRepeating("CompleteFishRequest", 5f, 4f);
+        // InvokeRepeating("CompleteFishRequest", 5f, 4f);
+    }
+
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            CompleteFishRequest();
+        }
     }
 
     public void NewFishRequest() {
         GameObject targetPosition = fishes.Count > 0 ? fishes[fishes.Count - 1]  : gameObject ;
         if (fishes.Count <= MAX_LINE_SIZE) {
             fishes.Add(this.spawner.SpawnFish(targetPosition));
-
-
-
-            
 
         }
     }
