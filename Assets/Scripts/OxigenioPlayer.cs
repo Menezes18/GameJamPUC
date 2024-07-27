@@ -9,6 +9,8 @@ public class OxigenioPlayer : MonoBehaviour{
     public float oxigenio;
     public float maxOxigenio;
     public float rate = 1.0f;
+    public float rateReg = 1.0f;
+    
     public bool OxigenioReg = true;
 
     private void Awake(){
@@ -25,7 +27,7 @@ public class OxigenioPlayer : MonoBehaviour{
         }
 
         if (OxigenioReg){
-            oxigenio -= rate * Time.deltaTime;
+            oxigenio -= rateReg * Time.deltaTime;
             
         }
         else if(!OxigenioReg){
@@ -36,6 +38,12 @@ public class OxigenioPlayer : MonoBehaviour{
         }
 
     }
+
+    public void AumentarOxigenio(int oxigenioPower){
+        maxOxigenio += oxigenioPower;
+    }
+    
+    
     
     
 }
