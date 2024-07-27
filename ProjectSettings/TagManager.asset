@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - Objeto
+  - Peixe
+  - TranformArma
   layers:
   - Default
   - TransparentFX
