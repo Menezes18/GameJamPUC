@@ -17,6 +17,11 @@ public class FishLine : MonoBehaviour {
         GameObject targetPosition = fishes.Count > 0 ? fishes[fishes.Count - 1]  : gameObject ;
         if (fishes.Count <= MAX_LINE_SIZE) {
             fishes.Add(this.spawner.SpawnFish(targetPosition));
+
+
+
+            
+
         }
     }
 
