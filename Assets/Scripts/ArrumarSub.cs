@@ -24,8 +24,9 @@ public class ArrumarSub : MonoBehaviour{
     
     public void Arrumar(){
         arrumar = false;
-        Destroy(objetQuebrado);
-        Instantiate(_ItemData.prefab, objetQuebrado.transform.position, objetQuebrado.transform.rotation);
+        //Destroy(objetQuebrado);
+        objetQuebrado.SetActive(true);
+        //Instantiate(_ItemData.prefab, objetQuebrado.transform.position, objetQuebrado.transform.rotation);
         }
         
     

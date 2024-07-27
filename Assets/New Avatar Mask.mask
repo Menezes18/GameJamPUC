@@ -8,4 +8,150 @@ AvatarMask:
   m_PrefabAsset: {fileID: 0}
   m_Name: New Avatar Mask
   m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
-  m_Elements: []
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 1
+  - m_Path: Armature/Root
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.L
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.L/Foot.L
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.L/Foot.L/FootToes.L
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.L/Foot.L/FootToes.L/FootTip.L
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.L/Foot.L/FootToes.L/FootTip.L/FootTip.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.L/Pole.L
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.L/Pole.L/Pole.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.R
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.R/Foot.R
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.R/Foot.R/FootToes.R
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.R/Foot.R/FootToes.R/FootTip.R
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.R/Foot.R/FootToes.R/FootTip.R/FootTip.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.R/Pole.R
+    m_Weight: 1
+  - m_Path: Armature/Root/IKLegCtrl.R/Pole.R/Pole.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Chest.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Chest.L/Chest.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Chest.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Chest.R/Chest.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/MiddleFinger.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/MiddleFinger.L/MiddleFingerTip.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/MiddleFinger.L/MiddleFingerTip.L/MiddleFingerTip.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/Pinkie.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/Pinkie.L/PinkieTip.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/Pinkie.L/PinkieTip.L/PinkieTip.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/Pointer.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/Pointer.L/PointerTip.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/Pointer.L/PointerTip.L/PointerTip.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/RingFinger.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/RingFinger.L/RingFingerTip.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/RingFinger.L/RingFingerTip.L/RingFingerTip.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/Thumb.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/Thumb.L/ThumbTip.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.L/Arm.L/Forearm.L/Hand.L/Thumb.L/ThumbTip.L/ThumbTip.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/MiddleFinger.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/MiddleFinger.R/MiddleFingerTip.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/MiddleFinger.R/MiddleFingerTip.R/MiddleFingerTip.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/Pinkie.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/Pinkie.R/PinkieTip.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/Pinkie.R/PinkieTip.R/PinkieTip.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/Pointer.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/Pointer.R/PointerTip.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/Pointer.R/PointerTip.R/PointerTip.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/RingFinger.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/RingFinger.R/RingFingerTip.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/RingFinger.R/RingFingerTip.R/RingFingerTip.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/Thumb.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/Thumb.R/ThumbTip.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Collarbone.R/Arm.R/Forearm.R/Hand.R/Thumb.R/ThumbTip.R/ThumbTip.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Neck
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Neck/Head
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Chest/Neck/Head/Head_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Hip
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Hip/Thigh.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Hip/Thigh.L/Leg.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Hip/Thigh.L/Leg.L/Leg.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Hip/Thigh.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Hip/Thigh.R/Leg.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Tail/Belly/Hip/Thigh.R/Leg.R/Leg.R_end
+    m_Weight: 1
+  - m_Path: BodyPlayer
+    m_Weight: 1

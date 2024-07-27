@@ -14,4 +14,5 @@ public enum Reciclavel{
 }
 public class LixoReciclavel : MonoBehaviour{
     public Reciclavel reciclavel;
+    public bool jaProcessado = false;
 }

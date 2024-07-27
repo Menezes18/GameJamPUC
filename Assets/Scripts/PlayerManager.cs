@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour{
     
     public float vida = 100;
     public int coin;
-
+    public bool itemMao = false;
     private void Awake(){
         instancia = this;
     }

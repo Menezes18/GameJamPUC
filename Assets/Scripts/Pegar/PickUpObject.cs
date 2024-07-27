@@ -45,11 +45,11 @@ public class PickUpObject : MonoBehaviour
             TryPickUpObject();
         }
         else{
-            if (hit.collider.transform.GetComponent<ArrumarSub>()){
+            if (hit.collider != null &&hit.collider.transform.GetComponent<ArrumarSub>()){
                 var arrumar = hit.collider.transform.GetComponent<ArrumarSub>();
                 var objeto = GetItemInHandName();
-                var scripitem = objeto.GetComponent<Item>();
-                if (scripitem.item == arrumar._ItemData){
+                var scripitem = objeto?.GetComponent<Item>();
+                if (scripitem != null && scripitem.item == arrumar._ItemData){
                     Debug.Log("Esta certo");
                     arrumar.Arrumar();
                     Destroy(objeto);
@@ -74,6 +74,7 @@ public class PickUpObject : MonoBehaviour
     }
 
     private ArrumarSub _arrumarSub;
+    private AtivarCanvas objCanvas;
     public void VerificarRaycast(){
         Vector3 mouseWorldPosition = Vector3.zero;
 
@@ -82,14 +83,16 @@ public class PickUpObject : MonoBehaviour
         Transform hitTransform = null;
         // if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit, pickupRange, ~playerLayerMask))
         if (Physics.Raycast(ray, out hit, _distancia, ~playerLayerMask)){
-            if (hit.collider.transform.GetComponent<ArrumarSub>()){
-                _arrumarSub = hit.collider.transform.gameObject.GetComponent<ArrumarSub>();
-                
-            }else if (_arrumarSub != null){
-                
+            if (hit.collider.transform.GetComponent<AtivarCanvas>()){
+                objCanvas = hit.collider.transform.GetComponent<AtivarCanvas>();
+                objCanvas.canvasObj.SetActive(true);
+            }
+            else if(objCanvas != null){
+                objCanvas.canvasObj.SetActive(false);
             }
         }
     }
+
     GameObject GetItemInHandName()
     {
         if (hand.childCount > 0)
@@ -98,14 +101,14 @@ public class PickUpObject : MonoBehaviour
         }
         return null;
     }
-    void TryPickUpObject()
-    {
+    void TryPickUpObject(){
+        PlayerManager.instancia.itemMao = true;
         Vector3 mouseWorldPosition = Vector3.zero;
 
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
         Transform hitTransform = null;
-       // if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit, pickupRange, ~playerLayerMask))
+        // if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit, pickupRange, ~playerLayerMask))
         if (Physics.Raycast(ray, out hit, _distancia, ~playerLayerMask)) {
         
             Debug.Log(hit.transform.gameObject.name);
@@ -128,12 +131,30 @@ public class PickUpObject : MonoBehaviour
                 {
                     col.enabled = false;
                 }
+
+                // Iterate through all children and apply the same modifications
+                foreach (Transform child in pickedObject.transform)
+                {
+                    rb = child.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.isKinematic = true;
+                    }
+
+                    col = child.GetComponent<Collider>();
+                    if (col != null)
+                    {
+                        col.enabled = false;
+                    }
+                }
             }
         }
     }
 
+
     void DropObject()
     {
+        PlayerManager.instancia.itemMao = false;
         if (pickedObject != null)
         {
             Rigidbody rb = pickedObject.GetComponent<Rigidbody>();
