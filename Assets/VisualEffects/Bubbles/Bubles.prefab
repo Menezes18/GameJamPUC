@@ -4842,7 +4842,7 @@ GameObject:
   - component: {fileID: 1309785944101038739}
   - component: {fileID: 4966180475809889215}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Bubles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
