@@ -51,14 +51,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Metalic: 0.4
-    - _Normals_Strength: 0.12
+    - _Metalic: 0
+    - _Normals_Strength: 0.42
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 1.4
-    - _VoronoiAgitation: 1
-    - _VoronoiPower: 2.3
-    - _VoronoiScale: 2
+    - _Smoothness: 4.61
+    - _VoronoiAgitation: 0.24
+    - _VoronoiPower: 2.58
+    - _VoronoiScale: -18.59
     m_Colors:
     - _NormalsSpeed: {r: 0, g: 0.2, b: 0, a: 0}
     - _Voranoi_Color: {r: 0.7712958, g: 7.365877, b: 0, a: 1}
