@@ -16,11 +16,14 @@ public class PickUpObject : MonoBehaviour
     public Material verdadeiro;
     public RaycastHit hit;
     private Renderer _renderer;
+    private int playerLayerMask;
+    
     private void Awake()
     {
         layerchao = LayerMask.NameToLayer("Objeto");
         playerInput = GetComponent<PlayerInput>();
         pegarAction = playerInput.actions["OnPegar"];
+        playerLayerMask = LayerMask.GetMask("Player");
     }
 
     private void OnEnable()
@@ -46,31 +49,37 @@ public class PickUpObject : MonoBehaviour
         }
     }
 
-    private void Update(){
-        // if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit)){
-        //     if (hit.transform.gameObject.layer == layerchao && !hit.collider.CompareTag("Player")){
+    private void Update()
+    {
+        // if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit, pickupRange, ~playerLayerMask))
+        // {
+        //     if (hit.transform.gameObject.layer == layerchao)
+        //     {
         //         _renderer = hit.transform.GetComponent<Renderer>();
-        //         if (_renderer != null){
+        //         if (_renderer != null)
+        //         {
         //             verdadeiro = _renderer.material;
         //             _renderer.material = outline;
-        //             
         //         }
         //     }
-        // }else{
-        //     if (verdadeiro != null){
-        //      _renderer.material = verdadeiro;
-        //         
+        // }
+        // else
+        // {
+        //     if (verdadeiro != null)
+        //     {
+        //         _renderer.material = verdadeiro;
         //     }
         // }
     }
 
     void TryPickUpObject()
     {
-        
-        if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit))
+        if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit, pickupRange, ~playerLayerMask))
         {
-            if (hit.transform.gameObject.layer == layerchao && !hit.collider.CompareTag("Player")){
-                    Debug.Log(hit.transform.gameObject.name);
+            Debug.Log(hit.transform.gameObject.name);
+            if (hit.transform.gameObject.layer == layerchao)
+            {
+                Debug.Log(hit.transform.gameObject.name);
                 pickedObject = hit.collider.gameObject;
                 pickedObject.transform.SetParent(hand);
                 pickedObject.transform.localPosition = Vector3.zero;

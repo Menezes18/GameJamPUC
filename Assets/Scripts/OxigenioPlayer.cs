@@ -2,17 +2,40 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class OxigenioPlayer : MonoBehaviour{
+    public static OxigenioPlayer instancia;
     public float oxigenio;
+    public float maxOxigenio;
     public float rate = 1.0f;
-    
-    private void Update(){
-        oxigenio -= rate * Time.deltaTime;
+    public bool OxigenioReg = true;
 
-        if (oxigenio < 0){
-            oxigenio = 0;
-            Debug.Log("morreu");
-        }
+    private void Awake(){
+        instancia = this;
     }
+
+    private void Update(){
+        
+        if (oxigenio < 0)
+        {
+            Debug.Log("moreu");
+            
+            oxigenio = 0;
+        }
+
+        if (OxigenioReg){
+            oxigenio -= rate * Time.deltaTime;
+            
+        }
+        else if(!OxigenioReg){
+            if (oxigenio <= maxOxigenio){
+                oxigenio += rate * Time.deltaTime;
+            }
+            
+        }
+
+    }
+    
+    
 }
