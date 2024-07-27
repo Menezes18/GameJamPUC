@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2839824299606367311}
   - component: {fileID: 3784356171515477370}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Peixe
   m_TagString: Peixe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

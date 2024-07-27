@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PickUpObject : MonoBehaviour
 {
-    public Transform hand; // O ponto na mão do jogador onde o objeto será colocado
-    public float pickupRange = 3.0f; // A distância máxima para pegar o objeto
+    public Transform hand; 
+    public float pickupRange = 3.0f; 
     public Camera playerCamera; 
     public Transform raycastOrigin;
     public int layerchao;
@@ -16,6 +16,7 @@ public class PickUpObject : MonoBehaviour
     public Material verdadeiro;
     public RaycastHit hit;
     private Renderer _renderer;
+    public float _distancia = 10;
     private int playerLayerMask;
     
     private void Awake()
@@ -38,44 +39,75 @@ public class PickUpObject : MonoBehaviour
 
     private void OnPegar(InputAction.CallbackContext context)
     {
-        Debug.Log("Apertou pegou");
+        
         if (pickedObject == null)
         {
             TryPickUpObject();
         }
-        else
-        {
-            DropObject();
+        else{
+            if (hit.collider.transform.GetComponent<ArrumarSub>()){
+                var arrumar = hit.collider.transform.GetComponent<ArrumarSub>();
+                var objeto = GetItemInHandName();
+                var scripitem = objeto.GetComponent<Item>();
+                if (scripitem.item == arrumar._ItemData){
+                    Debug.Log("Esta certo");
+                    arrumar.Arrumar();
+                    Destroy(objeto);
+                }
+                else{
+                    Debug.Log("Errado");
+                }
+
+            }
+            else{
+                DropObject();
+                
+            }
+            
         }
     }
 
-    private void Update()
-    {
-        // if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit, pickupRange, ~playerLayerMask))
-        // {
-        //     if (hit.transform.gameObject.layer == layerchao)
-        //     {
-        //         _renderer = hit.transform.GetComponent<Renderer>();
-        //         if (_renderer != null)
-        //         {
-        //             verdadeiro = _renderer.material;
-        //             _renderer.material = outline;
-        //         }
-        //     }
-        // }
-        // else
-        // {
-        //     if (verdadeiro != null)
-        //     {
-        //         _renderer.material = verdadeiro;
-        //     }
-        // }
+    private void Update(){
+        VerificarRaycast();
+        
+        
     }
 
+    private ArrumarSub _arrumarSub;
+    public void VerificarRaycast(){
+        Vector3 mouseWorldPosition = Vector3.zero;
+
+        Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
+        Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+        Transform hitTransform = null;
+        // if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit, pickupRange, ~playerLayerMask))
+        if (Physics.Raycast(ray, out hit, _distancia, ~playerLayerMask)){
+            if (hit.collider.transform.GetComponent<ArrumarSub>()){
+                _arrumarSub = hit.collider.transform.gameObject.GetComponent<ArrumarSub>();
+                
+            }else if (_arrumarSub != null){
+                
+            }
+        }
+    }
+    GameObject GetItemInHandName()
+    {
+        if (hand.childCount > 0)
+        {
+            return hand.GetChild(0).gameObject;
+        }
+        return null;
+    }
     void TryPickUpObject()
     {
-        if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit, pickupRange, ~playerLayerMask))
-        {
+        Vector3 mouseWorldPosition = Vector3.zero;
+
+        Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
+        Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+        Transform hitTransform = null;
+       // if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit, pickupRange, ~playerLayerMask))
+        if (Physics.Raycast(ray, out hit, _distancia, ~playerLayerMask)) {
+        
             Debug.Log(hit.transform.gameObject.name);
             if (hit.transform.gameObject.layer == layerchao)
             {
@@ -127,7 +159,6 @@ public class PickUpObject : MonoBehaviour
         {
             Gizmos.color = Color.red;
             Gizmos.DrawLine(raycastOrigin.position, raycastOrigin.position + playerCamera.transform.forward * pickupRange);
-            Gizmos.DrawSphere(raycastOrigin.position + playerCamera.transform.forward * pickupRange, 0.1f);
         }
     }
 }

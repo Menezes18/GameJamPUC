@@ -59,7 +59,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
             }
             else{
                 
-            DetectAndDestroyFish();
+                 DetectAndDestroyFish();
                 if (raycastHit.transform != null && raycastHit.transform.CompareTag("Peixe")){
                     var Fish = raycastHit.transform.gameObject.GetComponent<FishMovement>();
                     if (Fish != null){
@@ -100,7 +100,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
     void ThrowObject(){
         if (Peixes > 0){
             Debug.Log("AA");
-            GameObject thrownObject = Instantiate(SkinPeixe[0], JogarPeixe.position, ArmaPeixe.rotation);
+            GameObject thrownObject = Instantiate(SkinPeixe[0], JogarPeixe.position, JogarPeixe.rotation);
 
              var peixe = thrownObject.GetComponent<FishMovement>();
             
