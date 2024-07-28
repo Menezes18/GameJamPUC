@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour{
     public List<ItemStore> items;
     [SerializeField] private GameObject storeModal;
 
+
     public float money = 0;
 
 
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour{
     public void BuyItem(int index, float price) {
       money-=price;
       items[index].buyed = true;
+      items[index].BuyAction();
     }
 
     private void ResetStore() {

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1017470693138262768}
-  - component: {fileID: 5832428034191932980}
+  - component: {fileID: -2376676831262634963}
   m_Layer: 0
   m_Name: NadadeiraPro
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5832428034191932980
+--- !u!114 &-2376676831262634963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6849365477989875959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79e141aae43248ec9538d69ce712eb6, type: 3}
+  m_Script: {fileID: 11500000, guid: de22f1aa05306405ebfabd25840f14ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name: NADADEIRA 2000
-  itemImage: {fileID: 21300000, guid: 715fff4e047d0a545988b7aacda394da, type: 3}
+  itemImage: {fileID: 21300000, guid: 387fd5c7bb9b74cdd9a8771e4972aa85, type: 3}
   price: 25
   buyed: 0

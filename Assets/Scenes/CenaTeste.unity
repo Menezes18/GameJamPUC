@@ -10754,8 +10754,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 4179731279895793556, guid: 150cd89b01cc7416c918ac389916ccd3, type: 3}
-  - {fileID: 5832428034191932980, guid: 215027d37930a489a8a189ecffe75827, type: 3}
+  - {fileID: -6583629910178154984, guid: 150cd89b01cc7416c918ac389916ccd3, type: 3}
+  - {fileID: -2376676831262634963, guid: 215027d37930a489a8a189ecffe75827, type: 3}
   - {fileID: 8474067859006544732, guid: f534b0e08260f443295f6d6991782fc1, type: 3}
   storeModal: {fileID: 759644459753788135}
   money: 100
