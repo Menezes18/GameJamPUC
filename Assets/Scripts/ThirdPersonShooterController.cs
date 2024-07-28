@@ -89,6 +89,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true);
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 13f));
+//            animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 13f));
 
             FishMovement[] allFish = FindObjectsOfType<FishMovement>();
             foreach (var fish in allFish){
