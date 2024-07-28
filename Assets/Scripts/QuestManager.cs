@@ -46,13 +46,14 @@ public class QuestManager : MonoBehaviour
         if (VerificarConclusaoLixeiras() && VerificarConclusaoHabitates())
         {
             Debug.Log("Missão está correta!");
+            PlayerManager.instancia.textPainel("Missão está correta!");
             PlayerManager.instancia.ChamarVfx(1);
             Invoke("ChamarScene", 1f);
             
             
         }
-        else
-        {
+        else{
+            PlayerManager.instancia.textPainel("Missão está errada!");
             Debug.Log("Missão está errada!");
         }
     }
