@@ -39,12 +39,19 @@ public class PickUpObject : MonoBehaviour
 
     private void OnPegar(InputAction.CallbackContext context)
     {
-        
+        if (hit.collider != null && hit.collider.transform.GetComponent<FishCharacter>()){
+            Debug.Log("Quest");
+            var questManager = hit.collider.transform.GetComponent<FishCharacter>();
+
+            questManager.IniciarMissao();
+        }
+
         if (pickedObject == null)
         {
             TryPickUpObject();
         }
         else{
+            
             if (hit.collider != null &&hit.collider.transform.GetComponent<ArrumarSub>()){
                 var arrumar = hit.collider.transform.GetComponent<ArrumarSub>();
                 var objeto = GetItemInHandName();

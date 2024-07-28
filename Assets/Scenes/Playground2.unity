@@ -1028,6 +1028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 100
   coin: 0
+  itemMao: 0
 --- !u!114 &508181882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3791,6 +3792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a1f08da3c244d89957103e90c1bf65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeClosing: 2
+  maxValveDistance: 5
   rotationSpeed: 80
 --- !u!65 &2077381129
 BoxCollider:

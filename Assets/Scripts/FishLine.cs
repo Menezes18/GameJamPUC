@@ -14,9 +14,7 @@ public class FishLine : MonoBehaviour {
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            CompleteFishRequest();
-        }
+        
     }
 
     public void NewFishRequest() {

@@ -804,6 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 100
   coin: 0
+  itemMao: 0
 --- !u!114 &508181882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2006,7 +2007,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 67b9db8b371e4a44ba1a1cfd182fedf2, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 9e770af8a4b8f754f9727cf23862b77f, type: 2}
 --- !u!4 &1301777756
 Transform:
   m_ObjectHideFlags: 0

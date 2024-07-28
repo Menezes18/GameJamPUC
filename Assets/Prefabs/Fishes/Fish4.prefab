@@ -101,7 +101,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 501156535847391707}
   - component: {fileID: 2885340675369101884}
-  - component: {fileID: 3308466436378697658}
+  - component: {fileID: -2953296411453496987}
   m_Layer: 0
   m_Name: Fish4
   m_TagString: Untagged
@@ -156,19 +156,27 @@ MonoBehaviour:
   movTargetPosition: {fileID: 0}
   stopDistance: 1.8
   speed: 6
---- !u!114 &3308466436378697658
-MonoBehaviour:
+  _missao: {fileID: 11400000, guid: b48951b8ad3550640be5ad528466049f, type: 2}
+--- !u!136 &-2953296411453496987
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4312269226858074311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d61dec74fc8114813892ee8fe9d213fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialog: []
-  name: 
-  questFactory: {fileID: 3610040226209331818, guid: 70d24186e403b49588d176c9175ad2c4,
-    type: 3}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
