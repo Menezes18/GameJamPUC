@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 289074052860214810}
   - component: {fileID: 3190286789763321452}
   - component: {fileID: 2314101599791418899}
-  - component: {fileID: 7496080047867415508}
   - component: {fileID: 2839824299606367311}
   - component: {fileID: 3784356171515477370}
+  - component: {fileID: 1546456595591215982}
   m_Layer: 0
   m_Name: Peixe 2
   m_TagString: Peixe
@@ -87,29 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7496080047867415508
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5684959778324433106}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.78013074
-  m_Height: 1.5602615
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.07380608, z: -0.11916676}
 --- !u!54 &2839824299606367311
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -159,6 +136,29 @@ MonoBehaviour:
   frequencia: 1
   rb: {fileID: 0}
   movimenta: 0
+--- !u!136 &1546456595591215982
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684959778324433106}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8669402
+  m_Height: 2.1213589
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.15, z: -0.032357298}
 --- !u!1001 &8475582185363012235
 PrefabInstance:
   m_ObjectHideFlags: 0
