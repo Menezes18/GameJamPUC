@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using StarterAssets;
+using TMPro;
 using UnityEngine.InputSystem;
 
 public class ThirdPersonShooterController : MonoBehaviour {
@@ -30,9 +31,9 @@ public class ThirdPersonShooterController : MonoBehaviour {
         animator = GetComponent<Animator>();
     }
 
-    private void Update() {
-        
+    private void Update(){
 
+        UpdateUI();
         Vector3 mouseWorldPosition = Vector3.zero;
 
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
@@ -88,6 +89,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true);
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 13f));
+//            animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 13f));
 
             FishMovement[] allFish = FindObjectsOfType<FishMovement>();
             foreach (var fish in allFish){
@@ -96,7 +98,26 @@ public class ThirdPersonShooterController : MonoBehaviour {
 
         }
     }
+    
+    
+    public void UpdateUI(){
+        if (Peixes[0] > 0 || Peixes[1] > 0 || Peixes[2] > 0){
+            UiManager.instancia.AtivarPeixesUI.SetActive(true);
 
+            if (Peixes[0] > 0){
+                UiManager.instancia.numberPeixe1.text = "x" + Peixes[0].ToString();
+            }
+            if (Peixes[1] > 0){
+                UiManager.instancia.numberPeixe2.text = "x" + Peixes[1].ToString();
+            }
+            if (Peixes[2] > 0){
+                UiManager.instancia.numberPeixe3.text = "x" + Peixes[2].ToString();
+            }
+        }
+        else{
+            UiManager.instancia.AtivarPeixesUI.SetActive(false);
+        }
+    }
     private void DetectAndDestroyFish() {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1f);
         foreach (Collider collider in hitColliders) {

@@ -8,6 +8,7 @@ TagManager:
   - Objeto
   - Peixe
   - TranformArma
+  - ConcluirMissao
   layers:
   - Default
   - TransparentFX

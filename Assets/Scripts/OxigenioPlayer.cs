@@ -12,14 +12,16 @@ public class OxigenioPlayer : MonoBehaviour{
     public float rate = 1.0f;
     public float rateReg = 1.0f;
     public bool OxigenioReg = true;
+    public Animator _animacaoVinheta;
+    public GameObject _vinheta;
 
-    public Slider sliderOxigenio;
+    public Image sliderOxigenio;
     private void Awake(){
         instancia = this;
     }
 
     public void UpdateUI(){
-        sliderOxigenio.value = oxigenio / 100;
+        sliderOxigenio.fillAmount = oxigenio / 100;
     }
     private void Update(){
         UpdateUI();
@@ -39,6 +41,15 @@ public class OxigenioPlayer : MonoBehaviour{
                 oxigenio += rate * Time.deltaTime;
             }
             
+        }
+
+        if (oxigenio < 25){
+            _vinheta.SetActive(true);
+            _animacaoVinheta.SetBool("Batenndo",true);
+        }
+        else{
+            _animacaoVinheta.SetBool("Batenndo", false);
+            _vinheta.SetActive(false);
         }
 
     }

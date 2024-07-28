@@ -18,10 +18,10 @@ public class PickUpObject : MonoBehaviour
     private Renderer _renderer;
     public float _distancia = 10;
     private int playerLayerMask;
-
+    private Animator anim;
     
-    private void Awake()
-    {
+    private void Awake(){
+        anim = GetComponent<Animator>();
         layerchao = LayerMask.NameToLayer("Objeto");
         playerInput = GetComponent<PlayerInput>();
         pegarAction = playerInput.actions["OnPegar"];
@@ -37,7 +37,7 @@ public class PickUpObject : MonoBehaviour
     {
         pegarAction.performed -= OnPegar;
     }
-
+    
     private void OnPegar(InputAction.CallbackContext context)
     {
         if (hit.collider != null && hit.collider.transform.GetComponent<FishCharacter>()){
@@ -50,6 +50,7 @@ public class PickUpObject : MonoBehaviour
         if (pickedObject == null)
         {
             TryPickUpObject();
+            
         }
         else{
             
@@ -77,8 +78,13 @@ public class PickUpObject : MonoBehaviour
 
     private void Update(){
         VerificarRaycast();
-        
-        
+
+        if (pickedObject == null){
+            anim.SetBool("Pegar", false);
+        }
+        else{
+            anim.SetBool("Pegar", true);
+        }
     }
 
     private ArrumarSub _arrumarSub;
@@ -118,7 +124,11 @@ public class PickUpObject : MonoBehaviour
         Transform hitTransform = null;
         // if (Physics.Raycast(raycastOrigin.position, playerCamera.transform.forward, out hit, pickupRange, ~playerLayerMask))
         if (Physics.Raycast(ray, out hit, _distancia, ~playerLayerMask)) {
-        
+
+
+            if (hit.transform.gameObject.CompareTag("ConcluirMissao")){
+                QuestManager.instancia.VerificarMissao();
+            }
             Debug.Log(hit.transform.gameObject.name);
             if (hit.transform.gameObject.layer == layerchao)
             {

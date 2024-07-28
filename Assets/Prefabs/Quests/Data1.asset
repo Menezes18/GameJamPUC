@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ca2715c37cc2b40999128004f86a27, type: 3}
   m_Name: Data1
   m_EditorClassIdentifier: 
+  scene: LixoFase
   reciclavel: 1
   Papel: 1
   Plastico: 1

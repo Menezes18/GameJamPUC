@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager instancia;
@@ -31,7 +31,11 @@ public class QuestManager : MonoBehaviour
         }
 
         _missao = missao;
-
+        if (_missao.habitantes){
+            SceneManager.LoadScene(_missao.scene);
+        }else if (missao.reciclavel){
+            SceneManager.LoadScene(_missao.scene);
+        }
         Debug.Log("Iniciou a missão.");
         erros = 0;
     }
@@ -42,6 +46,10 @@ public class QuestManager : MonoBehaviour
         if (VerificarConclusaoLixeiras() && VerificarConclusaoHabitates())
         {
             Debug.Log("Missão está correta!");
+            PlayerManager.instancia.ChamarVfx(1);
+            Invoke("ChamarScene", 1f);
+            
+            
         }
         else
         {
@@ -49,6 +57,9 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    public void ChamarScene(){
+        SceneManager.LoadScene("PlaygroundRecuperado");
+    }
     private bool VerificarConclusaoLixeiras(){
         if (!_missao.reciclavel)
             return true;
