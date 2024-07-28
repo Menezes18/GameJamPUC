@@ -7,6 +7,7 @@ public class QuestManager : MonoBehaviour
     public Missao _missao;
     public int erros;
     public Lixeira[] lixeiras;
+    public Habitates[] habitates;
 
     private void Awake()
     {
@@ -23,28 +24,35 @@ public class QuestManager : MonoBehaviour
 
     public void IniciarFase(Missao missao)
     {
-        if (missao.requisitos == null)
+        if (missao == null)
         {
-            Debug.LogError("missao.requisitos é nulo. Certifique-se de que está corretamente inicializado.");
+            Debug.LogError("A missão fornecida é nula. Certifique-se de que está corretamente inicializada.");
             return;
         }
 
         _missao = missao;
 
-        Debug.Log("Iniciou");
+        Debug.Log("Iniciou a missão.");
         erros = 0;
     }
-
-    public void VerificarItem(Reciclavel reciclavel)
-    {
-        // Código para verificar o item (mantido igual)
-    }
+    
 
     public void VerificarMissao()
     {
-        lixeiras = FindObjectsOfType<Lixeira>();
+        if (VerificarConclusaoLixeiras() && VerificarConclusaoHabitates())
+        {
+            Debug.Log("Missão está correta!");
+        }
+        else
+        {
+            Debug.Log("Missão está errada!");
+        }
+    }
 
-        bool missaoCorreta = true;
+    private bool VerificarConclusaoLixeiras(){
+        if (!_missao.reciclavel)
+            return true;
+        lixeiras = FindObjectsOfType<Lixeira>();
 
         foreach (var lixeira in lixeiras)
         {
@@ -53,38 +61,71 @@ public class QuestManager : MonoBehaviour
                 case Reciclavel.Papel:
                     if (lixeira._acertos < _missao.Papel)
                     {
-                        missaoCorreta = false;
+                        return false;
                     }
                     break;
                 case Reciclavel.Plastico:
                     if (lixeira._acertos < _missao.Plastico)
                     {
-                        missaoCorreta = false;
+                        return false;
                     }
                     break;
                 case Reciclavel.Vidros:
                     if (lixeira._acertos < _missao.Vidros)
                     {
-                        missaoCorreta = false;
+                        return false;
                     }
                     break;
                 case Reciclavel.Metais:
                     if (lixeira._acertos < _missao.Metais)
                     {
-                        missaoCorreta = false;
+                        return false;
                     }
                     break;
             }
+        }
 
-            if (!missaoCorreta)
-            {
-                Debug.Log("Missão está errada!");
-                return;
+        return true;
+    }
+
+    private bool VerificarConclusaoHabitates(){
+        if (!_missao.habitantes)
+            return true;
+
+        habitates = FindObjectsOfType<Habitates>();
+
+        foreach (var habitate in habitates){
+            if (habitate._SkinPeixe == SkinPeixe.peixeSkin1){
+                if (habitate.peixes >= _missao.PeixeSkin1){
+                    Debug.Log("Peixe1 Certo");
+                }
+                else{
+                    return false;
+                }
+            }
+            else if (habitate._SkinPeixe == SkinPeixe.peixeSkin2){
+                if (habitate.peixes >= _missao.PeixeSkin2){
+                    Debug.Log("Peixe1 Certo");
+                }
+                else{
+                    return false;
+
+                }
+            }
+            else if (habitate._SkinPeixe == SkinPeixe.peixeSkin3){
+                if (habitate.peixes >= _missao.PeixeSkin3){
+                    Debug.Log("Peixe1 Certo");
+                }
+                else{
+                    return false;
+
+                }
             }
         }
 
-        Debug.Log("Missão está correta!");
-    }
+        return true;
+       
+}
 
     private void Update()
     {

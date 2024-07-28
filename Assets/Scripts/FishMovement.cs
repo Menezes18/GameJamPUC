@@ -30,7 +30,7 @@ public class FishMovement : MonoBehaviour {
     }
 
     private void Update() {
-        if (puxar) {
+        if (puxar && !movimenta) {
             Vector3 direction = (playerTransform.position - transform.position).normalized;
             Vector3 targetPosition = transform.position + direction * speed * Time.deltaTime;
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothFactor * Time.deltaTime);

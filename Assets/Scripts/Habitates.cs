@@ -6,27 +6,18 @@ using UnityEngine;
 public class Habitates : MonoBehaviour
 {
     public bool habitates = false;
-    public float elapsedTime;
     public SkinPeixe _SkinPeixe;
+    public int peixes;
     private Collider myCollider;
     private List<Transform> movedObjects = new List<Transform>();
 
     private void Awake()
     {
-        elapsedTime = 0;
         myCollider = GetComponent<Collider>();
     }
 
-    private void Update()
-    {
-        if (habitates)
-        {
-            elapsedTime += Time.deltaTime;
-            if (elapsedTime <= 2)
-            {
-                Debug.Log("Tempo");
-            }
-        }
+    private void Update(){
+        peixes = movedObjects.Count;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +28,7 @@ public class Habitates : MonoBehaviour
             if (!movedObjects.Contains(other.transform)){
                 var fish = other.GetComponent<FishMovement>();
                 movedObjects.Add(other.transform);
+                
                 MoveToRandomPositionWithinCollider(other.transform, fish);
             }
 
@@ -59,10 +51,10 @@ public class Habitates : MonoBehaviour
         FishMovement fishMovement = other.GetComponent<FishMovement>();
         if (fishMovement != null && _SkinPeixe == fishMovement._skinPeixe)
         {
+                
             if (other.GetComponent<Rigidbody>())
             {
                 var rb = other.GetComponent<Rigidbody>();
-
                 if (rb != null)
                 {
                      rb.isKinematic = false;

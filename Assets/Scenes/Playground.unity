@@ -1487,9 +1487,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7fd043afdaed4c43ab791727e1b34e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _missao: {fileID: 0}
+  _missao: {fileID: 11400000, guid: b48951b8ad3550640be5ad528466049f, type: 2}
   erros: 0
   lixeiras: []
+  habitates: []
 --- !u!1 &509372195
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,8 +1524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   habitates: 0
-  elapsedTime: 0
   _SkinPeixe: 2
+  peixes: 0
 --- !u!65 &509372197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5099,8 +5100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   habitates: 0
-  elapsedTime: 0
   _SkinPeixe: 0
+  peixes: 0
 --- !u!65 &1787324811
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6116,8 +6117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   habitates: 0
-  elapsedTime: 0
   _SkinPeixe: 1
+  peixes: 0
 --- !u!65 &2132824615
 BoxCollider:
   m_ObjectHideFlags: 0
