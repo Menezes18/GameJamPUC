@@ -11,7 +11,7 @@ public class DialogueSystem : MonoBehaviour
     private Coroutine typingCoroutine;
     public GameObject balao;
     private bool chamar = true;
-    
+    public FishCharacter fishCharacter;
     private void Start(){
         //Iniciar();
     }
@@ -21,7 +21,7 @@ public class DialogueSystem : MonoBehaviour
     }
     public void Iniciar(){
         if (chamar){
-        fullText = "Este é um exemplo de diálogo que aparece como uma animação de digitação.";
+        fullText = fishCharacter._missao.text;
 
         // Start the typing animation
         StartTyping();

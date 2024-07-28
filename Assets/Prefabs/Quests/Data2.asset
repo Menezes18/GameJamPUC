@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7ca2715c37cc2b40999128004f86a27, type: 3}
-  m_Name: Data1
+  m_Name: Data2
   m_EditorClassIdentifier: 
-  scene: LixoFase
+  text: "Sauda\xE7\xF5es! Os mares frios e gelados onde vivem os peixes est\xE3o
+    ficando comprometidos com o aquecimento global e a pesca predat\xF3ria. Poderia
+    resgat\xE1-los para um aqu\xE1rio adequado com os lugares apropriados para eles? "
+  scene: SugarFase
   reciclavel: 1
   Papel: 1
   Plastico: 1

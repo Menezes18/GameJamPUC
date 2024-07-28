@@ -12,13 +12,13 @@ public class ArrumarSub : MonoBehaviour{
     public bool arrumar = true;
     public GameObject canvas;
     private void Update(){
-        if (arrumar){
-            canvas.SetActive(true);
-            
-        }
-        else{
-            canvas.SetActive(false);
-        }
+        // if (arrumar){
+        //     canvas.SetActive(true);
+        //     
+        // }
+        // else{
+        //     canvas.SetActive(false);
+        // }
         
     }
     

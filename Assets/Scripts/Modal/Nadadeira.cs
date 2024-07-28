@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
 
-public class Nadadeira : ItemStore
-{
-    ThirdPersonController player = (ThirdPersonController) GameObject.FindObjectOfType(typeof(ThirdPersonController));
+public class Nadadeira : ItemStore{
+    public ThirdPersonController player = FindObjectOfType<ThirdPersonController>();
    override public void BuyAction() {
-    player.MoveSpeed = 4.0f;
-    player.SprintSpeed = 6.5f;
+    ThirdPersonController.instancia.Movement(5);
+    
    }
 }

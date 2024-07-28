@@ -23,6 +23,7 @@ public class OxigenioPlayer : MonoBehaviour{
     public void UpdateUI(){
         sliderOxigenio.fillAmount = oxigenio / 100;
     }
+    
     private void Update(){
         UpdateUI();
         if (oxigenio < 0)

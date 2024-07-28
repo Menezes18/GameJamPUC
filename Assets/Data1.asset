@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ca2715c37cc2b40999128004f86a27, type: 3}
+  m_Name: Data1
+  m_EditorClassIdentifier: 
+  text: "Ol\xE1 mergulhador, tudo bem? Estou necessitada, os campos da cidade est\xE3o
+    cheios de lixo, pode resolver isso para mim?"
+  scene: LixoFase
+  reciclavel: 1
+  Papel: 1
+  Plastico: 1
+  Vidros: 1
+  Metais: 1
+  maxErros: 10
+  habitantes: 1
+  PeixeSkin1: 1
+  PeixeSkin2: 1
+  PeixeSkin3: 1

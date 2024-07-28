@@ -239,7 +239,7 @@ MonoBehaviour:
   movTargetPosition: {fileID: 0}
   stopDistance: 1.8
   speed: 6
-  _missao: {fileID: 11400000, guid: b48951b8ad3550640be5ad528466049f, type: 2}
+  _missao: {fileID: 11400000, guid: c5d8a27e42ccaa849b7a469006f289da, type: 2}
   _animation: {fileID: 495505555015132732}
   yPosition: 0
   _DialogueSystem: {fileID: 4583058365533956599}
@@ -991,6 +991,7 @@ MonoBehaviour:
   dialogueText: {fileID: 8726517489324878457}
   typingSpeed: 0.05
   balao: {fileID: 4201451688629770717}
+  fishCharacter: {fileID: 7542177853014766651}
 --- !u!1 &9167568931894421206
 GameObject:
   m_ObjectHideFlags: 0

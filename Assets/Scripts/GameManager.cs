@@ -35,7 +35,17 @@ public class GameManager : MonoBehaviour{
     }
 
     public void OpenStore() {
-      storeModal.SetActive(true); 
+      storeModal.SetActive(!storeModal.activeSelf);
+      if (storeModal.activeSelf){
+          Cursor.visible = true;
+          Cursor.lockState = CursorLockMode.None;
+          
+      }
+      else{
+          Cursor.lockState = CursorLockMode.Locked;
+          Cursor.visible = false;
+          Cursor.lockState = CursorLockMode.Locked;
+      }
     }
 
 

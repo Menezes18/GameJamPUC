@@ -563,8 +563,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.7
-  m_fontSizeBase: 18.7
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -932,6 +932,7 @@ MonoBehaviour:
   dialogueText: {fileID: 7883807242087084171}
   typingSpeed: 0.05
   balao: {fileID: 1958130040860305711}
+  fishCharacter: {fileID: 6410396598349862670}
 --- !u!1 &9186169434085573029
 GameObject:
   m_ObjectHideFlags: 0

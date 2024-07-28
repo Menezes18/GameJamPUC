@@ -12,8 +12,8 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM 
     [RequireComponent(typeof(PlayerInput))]
 #endif
-    public class ThirdPersonController : MonoBehaviour
-    {
+    public class ThirdPersonController : MonoBehaviour{
+        public static ThirdPersonController instancia;
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
@@ -122,10 +122,12 @@ namespace StarterAssets
             }
         }
 
-
-        private void Awake()
-        {
-            // get a reference to our main camera
+        public void Movement(int speed){
+            MoveSpeed = speed;
+        }
+        
+        private void Awake(){
+            instancia = this;
             if (_mainCamera == null)
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");

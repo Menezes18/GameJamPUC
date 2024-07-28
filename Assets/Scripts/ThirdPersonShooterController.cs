@@ -25,6 +25,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
     public Transform JogarPeixe;
     public float throwForce = 10f;
     public GameObject pistola;
+    private int selectedFishIndex = 0; 
     private void Awake() {
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
@@ -32,7 +33,21 @@ public class ThirdPersonShooterController : MonoBehaviour {
     }
 
     private void Update(){
-
+        if (Keyboard.current.digit1Key.wasPressedThisFrame)
+        {
+            selectedFishIndex = 0;
+            
+        }
+        else if (Keyboard.current.digit2Key.wasPressedThisFrame)
+        {
+            selectedFishIndex = 1;
+            
+        }
+        else if (Keyboard.current.digit3Key.wasPressedThisFrame)
+        {
+            selectedFishIndex = 2;
+            
+        }
         UpdateUI();
         Vector3 mouseWorldPosition = Vector3.zero;
 
@@ -143,42 +158,17 @@ public class ThirdPersonShooterController : MonoBehaviour {
     }
     void ThrowObject(){
         
-            if(Peixes[0] > 0){
-                GameObject thrownObject = Instantiate(SkinPeixe[0], JogarPeixe.position, JogarPeixe.rotation);
-
-                 var peixe = thrownObject.GetComponent<FishMovement>();
-                
-                Rigidbody rb = thrownObject.GetComponent<Rigidbody>();
-                if (rb != null){
-                    Peixes[0]--;
-                    rb.AddForce(ArmaPeixe.forward * throwForce, ForceMode.Impulse);
-                    
-                }
-            }else if (Peixes[1] > 0){
-                GameObject thrownObject = Instantiate(SkinPeixe[1], JogarPeixe.position, JogarPeixe.rotation);
-
-                var peixe = thrownObject.GetComponent<FishMovement>();
-
-                Rigidbody rb = thrownObject.GetComponent<Rigidbody>();
-                if (rb != null){
-                    Peixes[1]--;
-                    rb.AddForce(ArmaPeixe.forward * throwForce, ForceMode.Impulse);
-
-                }
-            }else if (Peixes[2] > 0)
+        if (Peixes[selectedFishIndex] > 0)
+        {
+            GameObject thrownObject = Instantiate(SkinPeixe[selectedFishIndex], JogarPeixe.position, JogarPeixe.rotation);
+            Rigidbody rb = thrownObject.GetComponent<Rigidbody>();
+            if (rb != null)
             {
-                GameObject thrownObject = Instantiate(SkinPeixe[2], JogarPeixe.position, JogarPeixe.rotation);
-
-                var peixe = thrownObject.GetComponent<FishMovement>();
-
-                Rigidbody rb = thrownObject.GetComponent<Rigidbody>();
-                if (rb != null){
-                    Peixes[2]--;
-                    rb.AddForce(ArmaPeixe.forward * throwForce, ForceMode.Impulse);
-
-                }
-
+                Peixes[selectedFishIndex]--;
+                
+                rb.AddForce(ArmaPeixe.forward * throwForce, ForceMode.Impulse);
             }
+        }
     }
     private void OnDrawGizmosSelected() {
         Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);

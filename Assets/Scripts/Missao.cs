@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "misaoData", menuName = "Misao", order = 1)]
 public class Missao : ScriptableObject{
 
+    public string text;
     public string scene;
     [Header("Lixeiras")]
     public bool reciclavel

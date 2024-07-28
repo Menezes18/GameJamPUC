@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LixoFase.unity
     guid: 848009c5af382914aaef502e1fbb8274
+  - enabled: 1
+    path: Assets/Scenes/SugarFase.unity
+    guid: 7021b7087ebf4b546afe76dcf3fec8f4
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
