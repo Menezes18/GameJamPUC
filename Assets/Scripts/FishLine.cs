@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FishLine : MonoBehaviour {
+    
     [SerializeField] private FishSpawner spawner;
     [SerializeField] private GameObject exitPos;
     [SerializeField] private int MAX_LINE_SIZE = 5;
@@ -14,26 +15,37 @@ public class FishLine : MonoBehaviour {
     }
 
     private void Update() {
-        
+        if (Input.GetKeyDown(KeyCode.N)){
+            CompleteFishRequest();
+        }
     }
-
+    
     public void NewFishRequest() {
         GameObject targetPosition = fishes.Count > 0 ? fishes[fishes.Count - 1]  : gameObject ;
         if (fishes.Count <= MAX_LINE_SIZE) {
             fishes.Add(this.spawner.SpawnFish(targetPosition));
-
         }
     }
 
     public void CompleteFishRequest() {
-        fishes[0].GetComponent<FishCharacter>().SetTarget(exitPos);
-        fishes[0].GetComponent<FishCharacter>().CompleteRequest();
-
-        fishes[1].GetComponent<FishCharacter>().SetTarget(gameObject);
-        for(int i = 2; i < fishes.Count; i++) {
-            fishes[i].GetComponent<FishCharacter>().SetTarget(fishes[i -1]);
+        if (fishes.Count == 0) {
+            return; // No fish to process
         }
 
-        fishes.RemoveAt(0);
+        if (fishes[0] != null) {
+            fishes[0].GetComponent<FishCharacter>().SetTarget(exitPos);
+            fishes[0].GetComponent<FishCharacter>().CompleteRequest();
+        }
+        
+        for (int i = 1; i < fishes.Count; i++) {
+            if (fishes[i] != null) {
+                fishes[i].GetComponent<FishCharacter>().SetTarget(i == 1 ? gameObject : fishes[i - 1]);
+            }
+        }
+
+        // Remove the first fish from the list after it's processed
+        if (fishes.Count > 0) {
+            fishes.RemoveAt(0);
+        }
     }
 }
