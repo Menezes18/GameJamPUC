@@ -18,6 +18,7 @@ public class PickUpObject : MonoBehaviour
     private Renderer _renderer;
     public float _distancia = 10;
     private int playerLayerMask;
+
     
     private void Awake()
     {

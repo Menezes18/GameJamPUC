@@ -23,6 +23,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
     public Transform ArmaPeixe;
     public Transform JogarPeixe;
     public float throwForce = 10f;
+    public GameObject pistola;
     private void Awake() {
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
@@ -49,7 +50,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
         }
 
         if (starterAssetsInputs.aim) {
-            
+            pistola.SetActive(true);
             aimVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetSensitivity(aimSensitivity);
             thirdPersonController.SetRotateOnMove(false);
@@ -82,6 +83,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
             }
         }
         else{
+            pistola.SetActive(false);
             aimVirtualCamera.gameObject.SetActive(false);
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true);

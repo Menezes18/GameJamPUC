@@ -21,7 +21,7 @@ public class FishMovement : MonoBehaviour {
     private Vector3 posicaoInicial;
     public Rigidbody rb;
     public bool movimenta = false;
-
+    
     private void Start() {
         var player = GameObject.FindWithTag("TranformArma");
         playerTransform = player.transform;

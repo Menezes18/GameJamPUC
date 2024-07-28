@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7496080047867415508}
   - component: {fileID: 2839824299606367311}
   - component: {fileID: 3784356171515477370}
+  - component: {fileID: -7423254798602085918}
   m_Layer: 0
   m_Name: Peixe
   m_TagString: Peixe
@@ -158,3 +159,24 @@ MonoBehaviour:
   frequencia: 1
   rb: {fileID: 0}
   movimenta: 0
+--- !u!95 &-7423254798602085918
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684959778324433106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ea85a522e9ec84ae08ec7be7de7c720e, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
