@@ -9,6 +9,6 @@ public class Nadadeira : ItemStore
 {
     public override void BuyAction()
     {
-        ThirdPersonController.instancia.Movement(50);
+        ThirdPersonController.instancia.Movement(4);
     }
 }

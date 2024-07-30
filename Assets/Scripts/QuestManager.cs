@@ -43,8 +43,8 @@ public class QuestManager : MonoBehaviour
 
     public void VerificarMissao()
     {
-        if (VerificarConclusaoLixeiras() && VerificarConclusaoHabitates())
-        {
+        if (VerificarConclusaoLixeiras() && VerificarConclusaoHabitates()){
+            GameManager.instance.money += 100;
             Debug.Log("Missão está correta!");
             PlayerManager.instancia.textPainel("Missão está correta!");
             PlayerManager.instancia.ChamarVfx(1);
