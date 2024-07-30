@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
 
-public class Nadadeira : ItemStore{
-    public ThirdPersonController player = FindObjectOfType<ThirdPersonController>();
-   override public void BuyAction() {
-    ThirdPersonController.instancia.Movement(5);
-    
-   }
+[CreateAssetMenu(fileName = "NewNadadeira", menuName = "Store/Nadadeira")]
+public class Nadadeira : ItemStore
+{
+    public override void BuyAction()
+    {
+        ThirdPersonController.instancia.Movement(50);
+    }
 }

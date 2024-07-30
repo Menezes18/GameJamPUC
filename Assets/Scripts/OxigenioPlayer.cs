@@ -18,6 +18,27 @@ public class OxigenioPlayer : MonoBehaviour{
     public Image sliderOxigenio;
     private void Awake(){
         instancia = this;
+       
+    }
+
+    public void Start(){
+        LoadOxigenio();
+    }
+    public void ResetOxigenio() {
+        PlayerPrefs.DeleteKey("MaxOxigenio");
+    }
+
+    public void SaveOxigenio() {
+        PlayerPrefs.SetFloat("MaxOxigenio", maxOxigenio);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadOxigenio() {
+        if (PlayerPrefs.HasKey("MaxOxigenio")) {
+            maxOxigenio = PlayerPrefs.GetFloat("MaxOxigenio");
+        } else{
+            maxOxigenio = 100;
+        }
     }
 
     public void UpdateUI(){
@@ -46,10 +67,10 @@ public class OxigenioPlayer : MonoBehaviour{
 
         if (oxigenio < 25){
             _vinheta.SetActive(true);
-            _animacaoVinheta.SetBool("Batenndo",true);
+                //_animacaoVinheta.SetBool("Batenndo",true);
         }
         else{
-            _animacaoVinheta.SetBool("Batenndo", false);
+            //_animacaoVinheta.SetBool("Batenndo", false);
             _vinheta.SetActive(false);
         }
 

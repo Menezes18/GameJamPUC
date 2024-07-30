@@ -17,11 +17,15 @@ public class ModalMenu : MonoBehaviour {
     public void ConfirmButton() {
 
         gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         // Destroy(gameObject);
     }
 
     public void CloseModal() {
         Debug.Log("asdasd");
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         gameObject.SetActive(false);
     }
 
