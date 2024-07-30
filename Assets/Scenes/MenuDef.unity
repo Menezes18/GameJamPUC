@@ -22361,7 +22361,7 @@ PrefabInstance:
     - target: {fileID: 147788186084861097, guid: 6d0618b9da97161469a2b75b71a1d43f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.27999783
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 147788186084861097, guid: 6d0618b9da97161469a2b75b71a1d43f,
         type: 3}
@@ -22427,6 +22427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: menu
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434851862310626948, guid: 6d0618b9da97161469a2b75b71a1d43f,
+        type: 3}
+      propertyPath: timerInterval
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

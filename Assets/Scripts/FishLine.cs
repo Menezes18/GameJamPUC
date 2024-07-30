@@ -8,16 +8,21 @@ public class FishLine : MonoBehaviour {
     [SerializeField] private GameObject exitPos;
     [SerializeField] private int MAX_LINE_SIZE = 5;
     public List<GameObject> fishes = new List<GameObject>();
-
+    public float timerInterval = 15f;
+    public bool menu = false;
     void Start() {
         InvokeRepeating("NewFishRequest", 1f, 3f);
         // InvokeRepeating("CompleteFishRequest", 5f, 4f);
+        if (menu){
+            InvokeRepeating("CompleteFishRequest", timerInterval, timerInterval);
+        }
     }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.N)){
             CompleteFishRequest();
         }
+        
     }
     
     public void NewFishRequest() {
