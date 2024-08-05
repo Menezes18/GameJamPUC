@@ -10,13 +10,15 @@ public class SceneM : MonoBehaviour
     public string scenename;
     public string ONU = "https://www.instagram.com/seuperfil"; 
     public Button ONUbutton; 
-
+    public GameObject panel;
     // Start is called before the first frame update
     public void Start(){
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
-
+    public void Activate(){
+        panel.SetActive(!panel.activeInHierarchy);
+    }
     public void Load()
     {
         SceneManager.LoadScene(scenename); 
