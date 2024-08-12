@@ -145,5 +145,9 @@ public class QuestManager : MonoBehaviour
         {
             VerificarMissao();
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
