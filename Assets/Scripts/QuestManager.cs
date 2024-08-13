@@ -149,5 +149,9 @@ public class QuestManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            SceneManager.LoadScene("PlaygroundRecuperado");
+        }
     }
 }
